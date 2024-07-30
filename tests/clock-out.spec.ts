@@ -5,6 +5,6 @@ test("Clock Out", async ({ page }) => {
   if (skip()) return;
   await goToLiveAttendance(page);
 
-  await page.getByRole('button', { name: 'Clock Out' }).click();
+  await page.getByText("Clock Out", { exact: true }).click();
   await expect(page.getByText("Successfully clock out")).toBeVisible();
 });
