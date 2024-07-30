@@ -22,8 +22,9 @@ export async function goToLiveAttendance(page: Page) {
 
   await page.getByRole("button", { name: "Sign in", exact: true }).click();
 
-  // langsung ke halaman Live Attendance
-  await page.goto("https://hr.talenta.co/live-attendance");
+  // attendance page
+  await page.goto("https://hr.talenta.co");
+  await page.getByText("Live attendance", { exact: true }).click();
 }
 
 export function skip() {
